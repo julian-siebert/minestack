@@ -15,7 +15,12 @@ import it.unimi.dsi.fastutil.objects.ObjectArrayList;
 import lombok.NonNull;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.apache.logging.log4j.Level;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.core.config.Configurator;
 import org.bson.Document;
+import org.slf4j.LoggerFactory;
+import org.slf4j.LoggerFactoryFriend;
 
 import javax.net.ssl.KeyManagerFactory;
 import javax.net.ssl.SSLContext;
@@ -34,6 +39,7 @@ import java.util.Collection;
 import java.util.Locale;
 import java.util.Objects;
 import java.util.concurrent.TimeUnit;
+import java.util.logging.Logger;
 
 @SuppressWarnings("UnstableApiUsage")
 @Slf4j(topic = "Minestack")
@@ -58,6 +64,11 @@ public final class MinestackModule extends AbstractModule {
     private void hazelcast(MinestackConfig.HazelcastConfig cfg, @NonNull SSLContext sslContext) {
         var start = System.currentTimeMillis();
         try {
+            Configurator.setLevel("com.hazelcast.internal", Level.WARN);
+            Configurator.setLevel("com.hazelcast.cache", Level.WARN);
+            Configurator.setLevel("com.hazelcast.system", Level.WARN);
+            Configurator.setLevel("com.hazelcast.system.logo", Level.OFF);
+
             var config = new Config();
             config.setClusterName(cfg.clusterName);
 
@@ -96,6 +107,16 @@ public final class MinestackModule extends AbstractModule {
     private MongoClient mongoClient(@NonNull MinestackConfig.MongoConfig cfg, @NonNull SSLContext sslContext) {
         var start = System.currentTimeMillis();
         try {
+            Configurator.setLevel("org.mongodb.driver.authenticator", Level.WARN);
+            Configurator.setLevel("org.mongodb.driver.client", Level.WARN);
+            Configurator.setLevel("org.mongodb.driver.cluster", Level.WARN);
+            Configurator.setLevel("org.mongodb.driver.connection", Level.WARN);
+            Configurator.setLevel("org.mongodb.driver.connection.tls", Level.WARN);
+            Configurator.setLevel("org.mongodb.driver.operation", Level.WARN);
+            Configurator.setLevel("org.mongodb.driver.protocol", Level.WARN);
+            Configurator.setLevel("org.mongodb.driver.uri", Level.WARN);
+            Configurator.setLevel("org.mongodb.driver.management", Level.WARN);
+
             var connectionString = new ConnectionString(cfg.url);
             var builder = MongoClientSettings.builder().applyConnectionString(connectionString);
 

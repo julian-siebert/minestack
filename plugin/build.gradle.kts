@@ -35,6 +35,8 @@ dependencies {
     annotationProcessor(libs.lombok)
     testCompileOnly(libs.lombok)
     testAnnotationProcessor(libs.lombok)
+
+    compileOnly("org.apache.logging.log4j:log4j-core:2.25.3")
 }
 
 sourceSets.main {
@@ -80,7 +82,8 @@ tasks {
             libs.mongo,
             libs.hazelcast,
             libs.configlib,
-            libs.guice
+            libs.guice,
+            libs.jcache
         )
 
         additionalConstants.put("PLUGIN_LIBRARIES", pluginLibs.joinToString(",") { optLib ->

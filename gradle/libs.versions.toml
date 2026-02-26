@@ -8,6 +8,7 @@ packetevents = "2.11.2"
 guice = "7.0.0"
 geyser = "2.9.0-SNAPSHOT"
 floodgate = "2.2.4-SNAPSHOT"
+jcache = "1.1.1"
 
 [libraries]
 paperApi = { group = "io.papermc.paper", name = "paper-api", version.ref = "paper" }
@@ -19,3 +20,4 @@ packetevents = { group = "com.github.retrooper", name = "packetevents-spigot", v
 guice = { group = "com.google.inject", name = "guice", version.ref = "guice" }
 geyser = { group = "org.geysermc.geyser", name = "api", version.ref = "geyser" }
 floodgate = { group = "org.geysermc.floodgate", name = "api", version.ref = "floodgate" }
+jcache = { group = "javax.cache", name = "cache-api", version.ref = "jcache" }
