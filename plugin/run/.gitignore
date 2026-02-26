@@ -7,3 +7,4 @@ plugins/spark/tmp
 usercache.json
 version_history.json
 crash-reports
+session.lock
