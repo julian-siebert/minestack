@@ -1,0 +1,21 @@
+[versions]
+paper = "1.21.11-R0.1-SNAPSHOT"
+lombok = "1.18.42"
+mongo = "5.7.0-beta0"
+hazelcast = "5.6.0"
+configlib = "4.8.1"
+packetevents = "2.11.2"
+guice = "7.0.0"
+geyser = "2.9.0-SNAPSHOT"
+floodgate = "2.2.4-SNAPSHOT"
+
+[libraries]
+paperApi = { group = "io.papermc.paper", name = "paper-api", version.ref = "paper" }
+lombok = { group = "org.projectlombok", name = "lombok", version.ref = "lombok" }
+mongo = { group = "org.mongodb", name = "mongodb-driver-sync", version.ref = "mongo" }
+hazelcast = { group = "com.hazelcast", name = "hazelcast", version.ref = "hazelcast" }
+configlib = { group = "de.exlll", name = "configlib-paper", version.ref = "configlib" }
+packetevents = { group = "com.github.retrooper", name = "packetevents-spigot", version.ref = "packetevents" }
+guice = { group = "com.google.inject", name = "guice", version.ref = "guice" }
+geyser = { group = "org.geysermc.geyser", name = "api", version.ref = "geyser" }
+floodgate = { group = "org.geysermc.floodgate", name = "api", version.ref = "floodgate" }

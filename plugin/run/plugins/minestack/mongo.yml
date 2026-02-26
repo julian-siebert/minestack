@@ -1,0 +1,22 @@
+# List of MongoDB hosts in host:port format
+# Example: localhost:27017
+hosts:
+- localhost:27017
+# Database name
+database: minestack
+# Username for authentication
+username: admin
+# Password for authentication
+password: adminpass
+# Enable TLS/SSL
+sslEnabled: false
+# Use mutual TLS (client certificate authentication)
+mTlsEnabled: false
+# Path to client certificate (PEM) for mTLS
+tlsCertPath: ''
+# Path to client private key (PEM) for mTLS
+tlsKeyPath: ''
+# Path to server CA certificate (PEM)
+tlsCaPath: ''
+# Maximum connection pool size
+maxPoolSize: 10

@@ -1,0 +1,31 @@
+# Comma-separated list of NATS server URLs.
+# Example: nats://localhost:4222,nats://backup:4222
+servers:
+- nats://localhost:4222
+# Username for authentication (optional if using token).
+username: ''
+# Password for authentication (optional if using token).
+password: ''
+# Token for authentication (alternative to username/password).
+token: ''
+# Name of the connection, visible in NATS monitoring tools.
+# Defaults to 'MyPluginNATS'
+connectionName: MyPluginNATS
+# Maximum number of reconnect attempts. Set -1 for infinite reconnects.
+maxReconnects: 10
+# Wait time in milliseconds between reconnect attempts.
+reconnectWaitMs: 2000
+# Enable TLS/SSL for the connection.
+tlsEnabled: false
+# Path to client certificate (required if TLS enabled and using client auth).
+tlsCertPath: ''
+# Path to client private key (required if TLS enabled and using client auth).
+tlsKeyPath: ''
+# Path to CA certificate to verify server certificate (optional).
+tlsCaPath: ''
+# Whether to automatically drain messages on shutdown.
+drainOnShutdown: true
+# Maximum number of pending messages for async publish (default 65536).
+maxPendingMsgs: 65536
+# Use a verbose mode (logs events, reconnects, errors).
+verboseLogging: false

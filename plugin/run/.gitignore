@@ -1,0 +1,9 @@
+libraries
+cache
+versions
+logs
+plugins/.paper-remapped
+plugins/spark/tmp
+usercache.json
+version_history.json
+crash-reports

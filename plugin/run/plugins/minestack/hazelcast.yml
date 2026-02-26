@@ -1,0 +1,15 @@
+clusterName: minestack
+members:
+- 127.0.0.1:5701
+localhostOnly: true
+port: 5701
+portAutoIncrement: true
+sslEnabled: false
+tlsCertPath: ''
+tlsKeyPath: ''
+tlsCaPath: ''
+backupCount: 1
+asyncBackupCount: 0
+defaultTtlSeconds: 0
+defaultMaxIdleSeconds: 0
+enableJmx: false

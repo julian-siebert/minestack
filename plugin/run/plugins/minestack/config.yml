@@ -1,0 +1,6 @@
+# List of directories containing client certificates, keys and certificate authorities
+certDirs: []
+
+hazelcast:
+  hosts:
+    - '192.168.11.131:5701'

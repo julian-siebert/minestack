@@ -1,0 +1,19 @@
+services:
+  mongodb:
+    image: mongo:latest
+    container_name: mongodb
+    ports:
+      - "27017:27017"
+    restart: unless-stopped
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: "admin"
+      MONGO_INITDB_ROOT_PASSWORD: "adminpass"
+  hazelcast:
+    image: hazelcast/hazelcast:latest
+    container_name: hazelcast
+    ports:
+      - "5701:5701"
+    environment:
+      HZ_CLUSTERNAME: "minestack"
+      HZ_NETWORK_PUBLICADDRESS: "192.168.11.131"
+    restart: unless-stopped
