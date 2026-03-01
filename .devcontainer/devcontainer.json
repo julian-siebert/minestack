@@ -1,0 +1,28 @@
+{
+  "name": "minetrix/minestack",
+  "image": "ubuntu:latest",
+  "customizations": {
+    "jetbrains": {
+      "backend": "IntelliJ"
+    }
+  },
+  "features": {
+    "ghcr.io/devcontainers/features/git" : {},
+    "ghcr.io/devcontainers/features/docker-outside-of-docker:1": {},
+    "ghcr.io/devcontainers/features/java:1": {
+      "installGradle": true,
+      "version": "25"
+    },
+    "ghcr.io/devcontainers-extra/features/bun:1": {}
+  },
+  "forwardPorts": [25565],
+  "portsAttributes": {
+    "25565": {
+      "label": "Minecraft Java Edition",
+    },
+    "19132": {
+      "label": "Minecraft Bedrock Edition",
+    },
+  },
+  "remoteUser": "ubuntu"
+}
